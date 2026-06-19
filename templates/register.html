@@ -1,0 +1,75 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="registration-page">
+
+    <div class="registration-card">
+
+        <div class="registration-header">
+            <h1>User Registration</h1>
+            <p>Please complete the form below to create your profile to join T.H.U.G corporation.</p>
+        </div>
+
+        <form method="POST" class="registration-form">
+
+            <div class="input-group">
+                <label for="full_name">Full Name</label>
+                <input
+                    type="text"
+                    id="full_name"
+                    name="full_name"
+                    value="{{ full_name or '' }}"
+                    placeholder="(NAME ON iD and surname)"
+                    required
+                >
+            </div>
+
+            <div class="input-group">
+                <label for="email">Email Address</label>
+                <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    value="{{ email or '' }}"
+                    placeholder="theto@example.com"
+                    required
+                >
+            </div>
+
+            <div class="input-group">
+                <label for="phone">Phone Number</label>
+                <input
+                    type="text"
+                    id="phone"
+                    name="phone"
+                    value="{{ phone or '' }}"
+                    placeholder="+0000000000"
+                    required
+                >
+            </div>
+
+            <div class="input-group">
+                <label for="bio">Short Bio</label>
+                <textarea
+                    id="bio"
+                    name="bio"
+                    rows="5"
+                    placeholder="tell US about yu"
+                    required
+                >{{ bio or '' }}</textarea>
+            </div>
+
+            <div class="button-group">
+                <button type="submit" class="register-btn">
+                    Register User
+                </button>
+            </div>
+
+        </form>
+
+    </div>
+
+</div>
+
+{% endblock %}
